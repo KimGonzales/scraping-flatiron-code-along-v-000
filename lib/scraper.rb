@@ -9,6 +9,7 @@ class Scraper
   def get_page
     doc = Nokogiri::HTML(open("http://learn-co-curriculum.github.io/site-for-scraping/courses"))
 
+<<<<<<< HEAD
     # doc.css(".post").each do |post|
     #   course = Course.new
     #   course.title = post.css("h2").text
@@ -23,10 +24,17 @@ class Scraper
 
   def make_courses
     self.get_courses.each do |post|
+=======
+    doc.css(".post").each do |post|
+>>>>>>> 44459cbd4b52d74cb9ce3b48b5bea5d9e99bec8c
       course = Course.new
       course.title = post.css("h2").text
       course.schedule = post.css("em").text
       course.description = post.css("p").text
+<<<<<<< HEAD
+=======
+      binding.pry
+>>>>>>> 44459cbd4b52d74cb9ce3b48b5bea5d9e99bec8c
     end
   end
 
@@ -40,7 +48,13 @@ class Scraper
       end
     end
   end
+<<<<<<< HEAD
 
 end
 
 Scraper.new.print_courses
+=======
+
+end
+ Scraper.new.get_page
+>>>>>>> 44459cbd4b52d74cb9ce3b48b5bea5d9e99bec8c
